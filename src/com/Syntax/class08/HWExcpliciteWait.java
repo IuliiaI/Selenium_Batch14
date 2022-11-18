@@ -27,8 +27,9 @@ public class HWExcpliciteWait {
         //  go to the website
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
 
+        //Button 1
         //click on checkbox
-        WebElement checkBox = driver.findElement(By.xpath("//div[@id='checkbox']"));
+        WebElement checkBox = driver.findElement(By.xpath("//input[@type='checkbox']"));
         checkBox.click();
         //click on remove
 
@@ -38,11 +39,16 @@ public class HWExcpliciteWait {
         WebElement removeBtn = driver.findElement(By.xpath("//button[text()='Remove']"));
         removeBtn.click();
         //verify the text
+        //here we use implicite wait because we refresh page, we cant see It's gone text and in DOM also no this text
+        //when we click remove Btn and check: we can see text It's gone also at UI and DOM then
+
         WebElement text = driver.findElement(By.xpath("//p[@id='message']"));
         String textMsg = text.getText();
         if(textMsg.equalsIgnoreCase("It's gone!")){
             System.out.println("Text is verified");
         }
+        //Button 2
+
         //click on enable
         WebElement enableBtn = driver.findElement(By.xpath("//button[text()='Enable']"));
         enableBtn.click();

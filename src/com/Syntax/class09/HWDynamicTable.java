@@ -54,7 +54,9 @@ public class HWDynamicTable {
                 // //table[@id='resultTable']/tbody/tr[5]/td[1]
                 WebElement checkBox = driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr[" + (i + 1) + "]/td[1]"));
                 checkBox.click();
+                break;
             }
+
         }
 
     }
